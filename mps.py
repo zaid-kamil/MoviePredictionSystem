@@ -391,8 +391,8 @@ def find_similarities(df, id_entry,gaussian_filter ,del_sequels=True, verbose=Fa
     liste_films = recommand(df, id_entry)
     # __________________________________
     # Create a list of 31 films
-    parametres_films = extract_parameters(df, liste_films)
-    parametres_films = extract_parameters(df, liste_films)
+    parametres_films = extract_parameters(df, liste_films,gaussian_filter=gaussian_filter)
+    parametres_films = extract_parameters(df, liste_films,gaussian_filter=gaussian_filter)
     # _______________________________________
     # Select 5 films from this list
     film_selection = []
@@ -606,7 +606,7 @@ def code():
 
         # In[39]:
 
-    df_keywords_synonyms = remplacement_df_keywords(df_keywords_cleaned, remplacement_mot, roots=False)
+    df_keywords_synonyms = remplacement_df_keywords(df_keywords_cleaned,PS, remplacement_mot, roots=False)
     keywords, keywords_roots, keywords_select = keywords_inventory(df_keywords_synonyms, colonne='plot_keywords')
 
     # In[40]:
